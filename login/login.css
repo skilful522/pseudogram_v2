@@ -1,0 +1,52 @@
+#main-container{
+    background: #fde3ff;
+    min-height: calc(100vh - 80px);
+}
+#registrationBlock{
+    height: 308px;
+    width: 375px;
+    margin : 0 auto;
+}
+
+#logIn-container{
+    height: 300px;
+    width: 375px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+h1, #justText, #justText2 {
+    text-align: center;
+}
+
+#singIn-container{
+    border: 1px solid silver;
+    width: max-content;
+    background: aliceblue;
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+#pseudo {
+    font-size: 1em;
+    font-family: 'Magic Wix Script RUS';
+}
+#userFirstName, #userLastName,
+#userEmail, #registration, #userLogInEmail,
+#userPassword, #justText2, #enter{
+    font-size: 1.5em;
+    display: block;
+    margin : 0 auto;
+    margin-top: 25px;
+}
+#registration, #enter{
+    width: 300px;
+}
+
+#logInBlock{
+    width: 370px;
+    background: aliceblue;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border: 1px solid silver;
+}

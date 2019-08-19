@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#home {
+    min-height: calc(100vh - 80px);
+}
+
+header {
+    background: snow;
+}
+
+button {
+    cursor: pointer;
+    outline-style: none;
+    border: 3px solid black;
+    background: black;
+    color: white;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before,
+button::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: snow;
+    top: 0;
+    left: -100%;
+    transition: .5s;
+    opacity: .5;
+}
+
+button:hover {
+    color: black;
+    background: white;
+}
+
+button:hover::before,
+button:hover::after {
+    left: 0;
+}
+
+.headerBlock {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerBlock {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#login {
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+    font-size: 1.05em;
+    margin-right: 10%;
+}
+
+#sign-in {
+    width: 100px;
+    text-align: center;
+    font-size: 1.05em;
+    margin-left: 55%;
+}
+
+#userInfo-container {
+    justify-content: center;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background: white;
+    height: 100%;
+    width: 100%;
+}
+
+#nameInput-container,#surnameInput-container {
+    font-size: 0.9em;
+    margin: 10px;
+}
+
+#nameInputLabel, #surnameInputLabel{
+    font-family: "Comic Sans MS";
+    font-size: 1.2em;
+}
+
+#surnameInput {
+    margin-left: 5px;
+}
+
+.infoText {
+    border-bottom: 3px solid silver;
+    font-family: "Comic Sans MS";
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#homeLink, #feedLink, #logInLink {
+    text-decoration: none;
+    font-size: 1em;
+    font-family: "Comic Sans MS";
+    color: black;
+}
+
+#linkBlock {
+    position: absolute;
+    width: max-content;
+    margin-left: 13%;
+    margin-top: 10px;
+}
+
+#homeLink {
+    margin-left: 10px;
+}
+
+#feedLink {
+    margin-left: 20px;
+}
+
+#logInLink {
+    margin-left: 30px;
+}
+
+#search {
+    position: absolute;
+    font-size: 1.05em;
+    height: 25px;
+    margin-left: 40%;
+    margin-top: 5px;
+}
+
+#appName {
+    position: relative;
+    font-family: "Magic Wix Script RUS";
+    font-size: 2em;
+}
+
+#infoBlock {
+    height: 410px;
+    background: antiquewhite;
+}
+
+#editButton {
+    position: relative;
+    width: 25%;
+    margin-top: 5px;
+    left: 37%;
+}
+
+.photoBlock {
+    padding-top: 10px;
+    margin-left: 300px;
+    position: relative;
+    width: 290px;
+    height: 320px;
+}
+
+#photoUserBlock, .userNameBlock, .followBlock {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#userName-container {
+    position: relative;
+    padding: 10px;
+    bottom: 300px;
+    font-family: "Comic Sans MS";
+    font-size: 1.3em;
+    margin-left: 625px;
+    border-radius: 20px;
+    max-height: 300px;
+    max-width: 280px;
+}
+
+.photoBlock > #photoUserBlock > img {
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    background: white;
+    max-height: 300px;
+    max-width: 280px;
+}
+
+.accountInfoLabels, .accountInfoValues {
+    font-family: "Comic Sans MS";
+    font-size: 1.3em;
+    position: relative;
+    display: flex;
+    width: 450px;
+    left: 600px;
+    bottom: 250px;
+    justify-content: space-between;
+}
+
+#feedButton {
+    position: relative;
+    left: 34%;
+    width: 425px;
+}
+
+.userButtonsBlock {
+    position: relative;
+    display: flex;
+    left: 600px;
+    bottom: 120px;
+    justify-content: space-between;
+    width: 400px;
+}
+
+#postsButton, #taggedButton {
+    font-family: "Comic Sans MS";
+    font-size: 1.5em;
+}
+
+#followButton {
+    position: relative;
+    padding: 10px;
+    left: 300px;
+    font-family: "Comic Sans MS";
+    font-size: 1.1em;
+    bottom: 350px;
+    border-radius: 20px;
+    max-height: 300px;
+    width: 125px;
+}
+
+.followBlock > #followButton {
+    padding: 10px;
+    border-radius: 20px;
+    max-height: 300px;
+    max-width: 280px;
+}
+
+#usersPhotos {
+    width: 100%;
+    background: blanchedalmond;
+}
+
+.imgBlock {
+    height: 400px;
+    width: 400px;
+    margin-left: 35px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1fa;
+    border: 1px solid silver;
+    border-radius: 25px;
+}
+
+.imgBlock > img {
+    position: relative;
+    max-width: 90%;
+    min-height: 90%;
+}
+
+#images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    text-align: center;
+}
