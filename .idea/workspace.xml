@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34af7c85-df12-4b74-bcb4-6661227d03ff" name="Default Changelist" comment="" />
+    <list default="true" id="34af7c85-df12-4b74-bcb4-6661227d03ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/login/login.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +24,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1PAea3qujI4CfjcD5c4X4Q7lNth" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -51,11 +63,25 @@
       <workItem from="1565421067841" duration="12077000" />
       <workItem from="1565510869799" duration="20922000" />
       <workItem from="1565860043175" duration="36082000" />
-      <workItem from="1566026171449" duration="63336000" />
+      <workItem from="1566026171449" duration="63918000" />
+      <workItem from="1566283217948" duration="14253000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

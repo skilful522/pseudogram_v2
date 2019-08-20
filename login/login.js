@@ -16,7 +16,7 @@ export default function () {
     window.removeUserLinks();
 
     registration.addEventListener("click", function () {
-        if (checkUserInput(userFirstName,userLastName) === true) {
+        if (checkUserInput(userFirstName, userLastName) === true) {
             let user = {email: userEmail.value};
             doRequest(user);
             counter++
@@ -27,7 +27,7 @@ export default function () {
         }
     });
 
-    function checkUserInput(input,input2) {
+    function checkUserInput(input, input2) {
 
         let inputArray = input.value.split("");
         let inputArray2 = input2.value.split("");
@@ -136,25 +136,37 @@ export default function () {
             },
         }).then(resp => resp.json()
         ).then(token => {
-            if (token.hasOwnProperty('token')) {
-                window['token'] = token;
-                window['userLogInEmail'] = userLogInEmail.value;
-                let nameUserArray = localStorage.getItem(userLogInEmail.value).split(" ");
-                let userFirstName = nameUserArray[0];
-                let userLastName = nameUserArray[1];
-                let userId = nameUserArray[2];
-                let userToken = token.token;
-                user = {name: userFirstName, surname: userLastName, token: userToken, id: userId, ava:''};
-                console.log(user);
-                document.cookie = 'user =' + JSON.stringify(user);
-                window['cookie'] = document.cookie;
-                location.href = "#/home";
-            } else {
-                logInStr.innerHTML = "Wrong email\nor password";
-                setTimeout(logInStr.innerHTML = "Log in", 3000);
-            }
+                if (token.hasOwnProperty('token')) {
+                    window['token'] = token;
+                    window['userLogInEmail'] = userLogInEmail.value;
+                    let nameUserArray = localStorage.getItem(userLogInEmail.value).split(" ");
+                    let userFirstName = nameUserArray[0];
+                    let userLastName = nameUserArray[1];
+                    let userId = nameUserArray[2];
+                    let userToken = token.token;
+                    let userAva = nameUserArray[4];
+                    user = {
+                        name: userFirstName,
+                        surname: userLastName,
+                        token: userToken,
+                        id: userId,
+                        ava: userAva,
+                        email: userLogInEmail.value
+                    };
+                    localStorage.setItem(user.email, saveUserInfo());
+                    document.cookie = 'user =' + JSON.stringify(user);
+                    window['cookie'] = document.cookie;
+                    location.href = "#/home";
+                } else {
+                    logInStr.innerHTML = "Wrong email or password";
+                    setTimeout(logInStr.innerHTML = "Log in", 3000);
+                }
             }
         ).catch(error => console.log(error));
+    }
+
+    function saveUserInfo() {
+        return user.name + " " + user.surname + " " + user.token + " " + user.id + " " + user.ava + " " + user.email;
     }
 }
 

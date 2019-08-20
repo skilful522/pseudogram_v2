@@ -82,6 +82,22 @@ button:hover::after {
     width: 100%;
 }
 
+#userAvatarForm {
+    position: relative;
+    display: flex;
+    padding-top: 15px;
+    width: 100%;
+}
+#userPhotoChanger-container{
+    font-family: "Comic Sans MS";
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#fileInput{
+    width: 80%;
+}
+
 #nameInput-container,#surnameInput-container {
     font-size: 0.9em;
     margin: 10px;
