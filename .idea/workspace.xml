@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="34af7c85-df12-4b74-bcb4-6661227d03ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed/feed.css" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed/feed.html" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/login/login.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +33,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/feed" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Horizon\Desktop\web-projects\pseudo\feed" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,7 +70,7 @@
       <workItem from="1565510869799" duration="20922000" />
       <workItem from="1565860043175" duration="36082000" />
       <workItem from="1566026171449" duration="63918000" />
-      <workItem from="1566283217948" duration="14253000" />
+      <workItem from="1566283217948" duration="22253000" />
     </task>
     <servers />
   </component>

@@ -6,9 +6,12 @@ export default function () {
     const nameInput = document.querySelector("#nameInput");
     const surnameInput = document.querySelector("#surnameInput");
     const photoForm = document.forms.namedItem('userAvatar');
+    const userPhotoInfo = document.querySelector("#userPhotoInfo");
+
     let API = "https://intern-staging.herokuapp.com/api";
     let userName = document.querySelector("#userName");
     let userSurname = document.querySelector("#userSurname");
+    const defaultUserPhoto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwcaN8Fk2YhPdM8pKjl-4OsxCwskPUudKbuVbT5ox7VZ82EsMv';
 
     let userStr;
     let user;
@@ -41,6 +44,7 @@ export default function () {
             editUserInfo();
             nameInput.placeholder = user.name;
             surnameInput.placeholder = user.surname;
+            userPhotoInfo.innerText = "Please upload a real photo of yourself so your friends can recognize you.";
             editBtn.innerText = "Save";
         } else {
             counter = 0;
@@ -68,7 +72,7 @@ export default function () {
     function updateUserName(input, input2) {
         if (!(input.value === "" || !(isNaN(input.value))) ||
             !(input2.value === "" || !(isNaN(input2.value)))) {
-            return input.value + " " + input2.value + " "+ user.name + " " + user.surname + " " + user.token + " " + user.id + " " + user.ava;
+            return input.value + " " + input2.value + " " + user.name + " " + user.surname + " " + user.token + " " + user.id + " " + user.ava;
         }
     }
 
@@ -87,6 +91,7 @@ export default function () {
                 console.log(user);
                 document.cookie = 'user =' + JSON.stringify(user);
                 userPhoto.src = user.ava;
+                userPhotoInfo.innerText = "Photo has been uploaded";
             }
         );
     }
@@ -131,10 +136,7 @@ export default function () {
 
     setUserPhoto(user.ava);
 
-    function setUserPhoto(userAva = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwcaN8Fk2YhPdM8pKjl-4OsxCwskPUudKbuVbT5ox7VZ82EsMv') {
-        console.log(user);
-        console.log(userPhoto.src);
-        console.log(user.ava);
+    function setUserPhoto(userAva = defaultUserPhoto) {
         userPhoto.src = userAva;
     }
 

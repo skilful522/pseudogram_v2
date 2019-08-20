@@ -1,3 +1,39 @@
 #feedPhoto {
     min-height: calc(100vh - 80px);
+    display: inline-block;
+    height: 640px;
+}
+
+#feedImages {
+    display: flex;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feedImgBlock {
+    display: flex;
+    width: calc(100% / 3);
+    align-items: center;
+    justify-content: center;
+}
+
+#feedButton-container{
+    text-align: center;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+#feedButton {
+    display: inline-block;
+    width: 30%;
+}
+
+.feedImgBlock > img {
+    padding-top: 10px;
+    border: 1px solid red;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    max-width: 100%;
+    min-height: 100%;
 }
