@@ -1,0 +1,20 @@
+{
+  "name": "pseudogram_v2",
+  "version": "1.0.0",
+  "description": "app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skilful522/pseudogram_v2.git"
+  },
+  "author": "Stanislav Sergienya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skilful522/pseudogram_v2/issues"
+  },
+  "homepage": "https://github.com/skilful522/pseudogram_v2#readme"
+}
