@@ -7,6 +7,13 @@ export default function () {
     const surnameInput = document.querySelector("#surnameInput");
     const photoForm = document.forms.namedItem('userAvatar');
     const userPhotoInfo = document.querySelector("#userPhotoInfo");
+    const imgBlock = document.querySelector(".imgBlock");
+    const feedImages = document.querySelector("#images");
+    const postsBtn = document.querySelector("#postsButton");
+    const snapshotBtn = document.querySelector("#snapshot");
+    const userChangeContainer = document.querySelector("#user-change-container");
+    const snapshotContainer = document.querySelector("#snapshot-container");
+    const video = document.createElement("video");
 
     let API = "https://intern-staging.herokuapp.com/api";
     let userName = document.querySelector("#userName");
@@ -15,9 +22,10 @@ export default function () {
 
     let userStr;
     let user;
-
+    let photo = [];
     let inputValues = [];
     let counter = 0;
+    let counter2 = 0;
 
     parseUser();
     setUserName(userName, userSurname);
@@ -35,8 +43,8 @@ export default function () {
     window.showUserLinks();
 
     userInfoContainer.style.display = "none";
-
-    editBtn.addEventListener("click", function () {
+    snapshotContainer.style.display = "none";
+    editBtn.addEventListener("click", function (event) {
         inputValues = [nameInput.value, surnameInput.value];
         hideUserPhoto();
         counter++;
@@ -62,6 +70,40 @@ export default function () {
             makeUserPhotoVisible();
             editBtn.innerText = "Edit";
         }
+    });
+
+    function makeVideo(){
+        navigator.getUserMedia({
+            audio: false,
+            video: {width: 500, height: 500}
+        }, (stream => {
+            video.srcObject = stream;
+            video.onloadedmetadata = () => video.play();
+        },
+            (error) => console.log(error))
+        );
+    }
+
+    snapshotBtn.addEventListener('click', function (event) {
+        counter2++;
+        hideUserPhoto();
+        if (counter2 === 1) {
+            userChangeContainer.style.display = 'none';
+            snapshotContainer.style.display = 'block';
+            makeVideo();
+            snapshotContainer.appendChild(video);
+            snapshotBtn.innerText = 'close';
+           // makeUserPhotoVisible();
+        } else {
+            counter2 = 0;
+            snapshotContainer.style.display = 'none';
+            userChangeContainer.style.display = 'block';
+            snapshotBtn.innerText = 'SNAPSHOT';
+        }
+    });
+
+    postsBtn.addEventListener('click', function () {
+        addPhotoToUser();
     });
 
     function getUserInfo() {
@@ -131,6 +173,24 @@ export default function () {
             return false;
         } else if (inputUser.length === counter) {
             return true;
+        }
+    }
+
+    function addPhotoToUser() {
+
+        if (window.addedPhoto) {
+            document.cookie = 'userAddedPhoto =' + window.addedPhoto;
+            photo = document.cookie.split("; userAddedPhoto=").pop().split(",");
+            localStorage.setItem('userAddedPhoto', photo);
+            for (let i = 0; i < photo.length; i++) {
+                const img = document.createElement("img");
+                const block = document.createElement("div");
+                block.className = "imgBlock";
+                img.src = photo[i];
+                img.className = 'img';
+                block.appendChild(img);
+                feedImages.appendChild(block);
+            }
         }
     }
 

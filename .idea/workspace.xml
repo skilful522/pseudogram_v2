@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/feed/feed.css" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feed/feed.html" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feed/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/feed/feed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/home/home.js" afterDir="false" />
     </list>
@@ -70,7 +71,7 @@
       <workItem from="1565510869799" duration="20922000" />
       <workItem from="1565860043175" duration="36082000" />
       <workItem from="1566026171449" duration="63918000" />
-      <workItem from="1566283217948" duration="22253000" />
+      <workItem from="1566283217948" duration="40184000" />
     </task>
     <servers />
   </component>

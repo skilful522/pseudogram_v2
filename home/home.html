@@ -6,23 +6,28 @@
                 <img id="userPhoto">
             </div>
             <div id="userInfo-container">
-                <div class="infoText">Basic info</div>
-                <div id="nameInput-container">
-                    <label id="nameInputLabel" for="nameInput">First name</label>
-                    <input id="nameInput" name="nameInput" type="text">
+                <div id="user-change-container">
+                    <div class="infoText">Basic info</div>
+                    <div id="nameInput-container">
+                        <label id="nameInputLabel" for="nameInput">First name</label>
+                        <input id="nameInput" name="nameInput" type="text">
+                    </div>
+                    <div id="surnameInput-container">
+                        <label id="surnameInputLabel" for="surnameInput">Last name</label>
+                        <input id="surnameInput" name="nameInput" type="text">
+                    </div>
+                    <div class="infoText">Update photo</div>
+                    <div id="userPhotoChanger-container">
+                        <span id="userPhotoInfo">Please upload a real photo of yourself so your friends can recognize you.</span>
+                        <form action="" id="userAvatarForm" name="userAvatar">
+                            <input type="file" id="fileInput" name="file">
+                            <input type="submit" id="upload" value="Upload">
+                        </form>
+                    </div>
                 </div>
-                <div id="surnameInput-container">
-                    <label id="surnameInputLabel"for="surnameInput">Last name</label>
-                    <input id="surnameInput" name="nameInput" type="text">
-                </div>
-                <div class="infoText">Update photo</div>
-                <div id="userPhotoChanger-container">
-                    <span id="userPhotoInfo">Please upload a real photo of yourself so your friends can recognize you.</span>
-                    <form action="" id="userAvatarForm" name ="userAvatar">
-                        <input type="file" id="fileInput" name="file">
-                        <input type="submit" id="upload" value="Upload">
-                    </form>
-                </div>
+                <div id="snapshot-container"></div>
+                <div class="infoText">Take a picture</div>
+                <button id="snapshot">SNAPSHOT</button>
             </div>
             <button id="editButton" type="submit">Edit</button>
         </div>
