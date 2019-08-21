@@ -6,18 +6,33 @@ export default function () {
     const addPhotoBtn = document.querySelector("#addPhotoBtn");
     const currentImg = document.querySelector("#currentImg");
     const addedPhoto = [];
+    const feedImgBlock = document.getElementsByClassName("feedImgBlock");
+
+    let res = [];
+    res[0] = "320x320";
+    res[1] = "640x640";
+    res[2] = "800x800";
+    res[3] = "900x900";
+    res[4] = "360x360";
+    res[5] = "340x340";
 
     function getRandomArbitrary(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    images.addEventListener('click',function (event) {
-        console.log(event.target);
-        console.log();
-        console.log(window.screen.availWidth);
+    searchInput.onkeypress = function (event) {
+         let searchText = searchInput.value;
+         if (event.keyCode == 13) {
+             for (let i = 0; i < feedImgBlock.length; i++) {
+                 let image = "https://source.unsplash.com/" + res[getRandomArbitrary(0,6)] + "/weekly?" + searchText;
+                 feedImgBlock[i].src = image;
+             }
+         }
+    };
+
+    images.addEventListener('click', function (event) {
         currentImg.src = event.target.src;
         currentImg.style.width = '500px';
-        console.log(currentImg.style.width );
         modal.style.display = "block";
     });
 
@@ -25,7 +40,7 @@ export default function () {
         modal.style.display = "none";
     });
 
-    addPhotoBtn.addEventListener("click",function () {
+    addPhotoBtn.addEventListener("click", function () {
         addedPhoto.push(currentImg.src);
         window.addedPhoto = addedPhoto;
     });

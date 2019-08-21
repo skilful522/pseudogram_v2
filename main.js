@@ -26,9 +26,12 @@ var routes = {
 
 };
 
+window.searchInput = searchInput;
+
 window['showUserLinks'] = function showUserLinks() {
     homeLink.style.visibility = 'visible';
     feedLink.style.visibility = 'visible';
+    searchInput.style.visibility = 'visible';
     logInLink.style.visibility = 'visible';
     loginBtn.style.visibility = 'visible';
 };
@@ -36,7 +39,6 @@ window['removeUserLinks'] = function removeUserLinks() {
     homeLink.style.visibility = 'hidden';
     feedLink.style.visibility = 'hidden';
     logInLink.style.visibility = 'hidden';
-    searchInput.style.visibility = 'hidden';
     loginBtn.style.visibility = 'hidden';
 };
 

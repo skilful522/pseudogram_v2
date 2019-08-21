@@ -39,6 +39,8 @@ export default function () {
         lastName.innerText = user.surname;
     }
 
+    window.searchInput = searchInput;
+
     window.showUserLinks();
 
     userInfoContainer.style.display = "none";
@@ -58,13 +60,10 @@ export default function () {
             if (checkUserInputName(nameInput, surnameInput) === true) {
                 user.name = nameInput.value;
                 user.surname = surnameInput.value;
-                console.log("nameInput " + nameInput.value);
-                console.log(user.name);
                 localStorage.setItem(user.email, updateUserName(nameInput, surnameInput));
                 userName.innerText = user.name;
                 userSurname.innerText = user.surname;
             }
-            console.log(user);
             document.cookie = 'user =' + JSON.stringify(user);
             makeUserPhotoVisible();
             editBtn.innerText = "Edit";
@@ -77,20 +76,14 @@ export default function () {
             video: {width: '100%', height: '100%'}
         }, (stream) => {
             video.srcObject = stream;
+            window.localStream = stream;
             video.onloadedmetadata = () => video.play();
         }, (error) => console.log(error));
     }
 
     function stopVideo() {
-        navigator.getUserMedia({
-            audio: false,
-            video: {width: '100%', height: '100%'}
-        }, (stream) => {
-            video.srcObject = stream;
-            video.onloadedmetadata = () => video.v
-        }, (error) => console.log(error));
+        localStream.getVideoTracks()[0].stop();
     }
-
 
     snapshotBtn.addEventListener('click', function () {
         counter2++;
@@ -101,14 +94,13 @@ export default function () {
             starVideo();
             snapshotContainer.appendChild(video);
             snapshotBtn.innerText = 'SNAP';
-            // makeUserPhotoVisible();
         } else {
             counter2 = 0;
             snap();
-            stopVideo();
             snapshotContainer.style.display = 'none';
             userChangeContainer.style.display = 'block';
             snapshotBtn.innerText = 'SNAPSHOT';
+            stopVideo();
         }
     });
 
