@@ -7,7 +7,6 @@ export default function () {
     const surnameInput = document.querySelector("#surnameInput");
     const photoForm = document.forms.namedItem('userAvatar');
     const userPhotoInfo = document.querySelector("#userPhotoInfo");
-    const imgBlock = document.querySelector(".imgBlock");
     const feedImages = document.querySelector("#images");
     const postsBtn = document.querySelector("#postsButton");
     const snapshotBtn = document.querySelector("#snapshot");
@@ -44,7 +43,7 @@ export default function () {
 
     userInfoContainer.style.display = "none";
     snapshotContainer.style.display = "none";
-    editBtn.addEventListener("click", function (event) {
+    editBtn.addEventListener("click", function () {
         inputValues = [nameInput.value, surnameInput.value];
         hideUserPhoto();
         counter++;
@@ -72,30 +71,41 @@ export default function () {
         }
     });
 
-    function makeVideo(){
+    function starVideo() {
         navigator.getUserMedia({
             audio: false,
-            video: {width: 500, height: 500}
-        }, (stream => {
+            video: {width: '100%', height: '100%'}
+        }, (stream) => {
             video.srcObject = stream;
             video.onloadedmetadata = () => video.play();
-        },
-            (error) => console.log(error))
-        );
+        }, (error) => console.log(error));
     }
 
-    snapshotBtn.addEventListener('click', function (event) {
+    function stopVideo() {
+        navigator.getUserMedia({
+            audio: false,
+            video: {width: '100%', height: '100%'}
+        }, (stream) => {
+            video.srcObject = stream;
+            video.onloadedmetadata = () => video.v
+        }, (error) => console.log(error));
+    }
+
+
+    snapshotBtn.addEventListener('click', function () {
         counter2++;
         hideUserPhoto();
         if (counter2 === 1) {
             userChangeContainer.style.display = 'none';
             snapshotContainer.style.display = 'block';
-            makeVideo();
+            starVideo();
             snapshotContainer.appendChild(video);
-            snapshotBtn.innerText = 'close';
-           // makeUserPhotoVisible();
+            snapshotBtn.innerText = 'SNAP';
+            // makeUserPhotoVisible();
         } else {
             counter2 = 0;
+            snap();
+            stopVideo();
             snapshotContainer.style.display = 'none';
             userChangeContainer.style.display = 'block';
             snapshotBtn.innerText = 'SNAPSHOT';
@@ -176,21 +186,36 @@ export default function () {
         }
     }
 
+    let snapPhoto = [];
+
+    function snap() {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, 300, 150);
+        snapPhoto.push(canvas.toDataURL());
+        userPhoto.src = canvas.toDataURL();
+        addPhoto(snapPhoto);
+    }
+
+    function addPhoto(array) {
+        for (let i = 0; i < array.length; i++) {
+            const img = document.createElement("img");
+            const block = document.createElement("div");
+            block.className = "imgBlock";
+            img.src = array[i];
+            img.className = 'img';
+            block.appendChild(img);
+            feedImages.appendChild(block);
+        }
+    }
+
     function addPhotoToUser() {
 
         if (window.addedPhoto) {
             document.cookie = 'userAddedPhoto =' + window.addedPhoto;
             photo = document.cookie.split("; userAddedPhoto=").pop().split(",");
             localStorage.setItem('userAddedPhoto', photo);
-            for (let i = 0; i < photo.length; i++) {
-                const img = document.createElement("img");
-                const block = document.createElement("div");
-                block.className = "imgBlock";
-                img.src = photo[i];
-                img.className = 'img';
-                block.appendChild(img);
-                feedImages.appendChild(block);
-            }
+            addPhoto(photo);
         }
     }
 

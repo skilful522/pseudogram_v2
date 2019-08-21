@@ -30,7 +30,6 @@ window['showUserLinks'] = function showUserLinks() {
     homeLink.style.visibility = 'visible';
     feedLink.style.visibility = 'visible';
     logInLink.style.visibility = 'visible';
-    searchInput.style.visibility = 'visible';
     loginBtn.style.visibility = 'visible';
 };
 window['removeUserLinks'] = function removeUserLinks() {
