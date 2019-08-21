@@ -1,9 +1,3 @@
-#feedPhoto {
-    min-height: calc(100vh - 80px);
-    display: inline-block;
-    height: 640px;
-}
-
 @font-face {
     font-family: 'Comic Sans MS';
     src: url('/fonts/comic.ttf')
@@ -12,6 +6,12 @@
 @font-face {
     font-family: 'Magic Wix Script RUS';
     src: url('/fonts/16684 (1).otf')
+}
+
+#feedPhoto {
+    min-height: calc(100vh - 80px);
+    display: inline-block;
+    height: 640px;
 }
 
 #feedImages {
