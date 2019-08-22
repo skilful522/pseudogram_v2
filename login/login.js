@@ -9,7 +9,8 @@ export default function () {
     const userLogInEmail = document.querySelector("#userLogInEmail");
     const userPassword = document.querySelector("#userPassword");
     const logInStr = document.querySelector("#justText2");
-
+    let userEmailDataBase = [];
+    let userIdDataBase = [];
     let user;
     let counter = 0;
 
@@ -56,8 +57,15 @@ export default function () {
     }
 
     enter.addEventListener('click', function () {
+        doGetRequest();
         doSignInRequest({email: userLogInEmail.value, password: userPassword.value});
     });
+
+    function getOldUser() {
+        console.log(user.email);
+        console.log(user.id);
+        return user.name + " " + user.surname + " " + user.email + " " + user.id;
+    }
 
     function getUsersNames(input, input2) {
         if (!(input.value === "" || !(isNaN(input.value))) ||
@@ -84,6 +92,25 @@ export default function () {
         userLastName.style.display = "block";
         userEmail.style.display = "block";
         checkEmailStr.style.display = "none";
+    }
+
+    let oldUser;
+
+    function doGetRequest() {
+        fetch('https://intern-staging.herokuapp.com/api/identification', {
+            method: 'GET',
+        }).then(resp => resp.json()
+        ).then(json => {
+            for (let i = 0; i < json.length; i++) {
+                if (userLogInEmail.value === json[i].email) {
+                    oldUser = {info: json[i]};
+                }
+            }
+            user = {name: 'Old', surname: 'User', id: oldUser.info._id, email: oldUser.info.email,};
+            localStorage.setItem(userLogInEmail.value, getOldUser());
+            console.log(user);
+            // console.log(oldUser);
+        });
     }
 
     function doRequest(data) {
@@ -137,8 +164,10 @@ export default function () {
         }).then(resp => resp.json()
         ).then(token => {
                 if (token.hasOwnProperty('token')) {
+                    console.log(token);
                     window['token'] = token;
                     window['userLogInEmail'] = userLogInEmail.value;
+                    console.log(userLogInEmail.value);
                     let nameUserArray = localStorage.getItem(userLogInEmail.value).split(" ");
                     let userFirstName = nameUserArray[0];
                     let userLastName = nameUserArray[1];
@@ -153,6 +182,7 @@ export default function () {
                         ava: userAva,
                         email: userLogInEmail.value
                     };
+                    console.log(user);
                     localStorage.setItem(user.email, saveUserInfo());
                     document.cookie = 'user =' + JSON.stringify(user);
                     window['cookie'] = document.cookie;
